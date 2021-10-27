@@ -5,6 +5,6 @@ exports.getAll = (req, res) => {
     .then((res) => res.json())
     .then((json) => res.status(200).json(json))
     .catch((err) => {
-      res.status(500).json({ ok: false, message: "Couldn't fetch data" });
+      res.status(500).json({ message: "Couldn't fetch data" });
     });
 };

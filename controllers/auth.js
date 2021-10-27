@@ -55,12 +55,10 @@ exports.register = async (req, res) => {
         password_hash: hash,
       });
 
-      res
-        .status(200)
-        .json({ ok: true, message: "User created, now log in please" });
+      res.status(200).json({ message: "User created, now log in please" });
     }
   } catch (error) {
-    res.status(500).json({ ok: false, errors: "Couldn't sign you in" });
+    res.status(500).json({ errors: "Couldn't sign you in" });
   }
 };
 

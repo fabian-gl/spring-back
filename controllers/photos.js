@@ -8,7 +8,12 @@ exports.getAll = async (req, res) => {
   try {
     if (!cachedPhotos) cachedPhotos = await fetchPhotos();
 
-    res.status(200).json(cachedPhotos.slice(offset, offset + limit));
+    res
+      .status(200)
+      .json({
+        count: cachedPhotos.length,
+        photos: cachedPhotos.slice(offset, offset + limit),
+      });
   } catch (error) {
     res.status(500).json({ message: "Couldn't fetch data" });
   }

@@ -10,7 +10,7 @@ Then, in the project directory you can run
 
 ### `npm install`
 
-### `npm dev`
+### `npm run dev`
 
 That will start the server on [http://localhost:5000](http://localhost:5000)
 

@@ -26,9 +26,11 @@ exports.login = async (req, res) => {
           { expiresIn: "24h" },
           (err, token) => {
             if (err) throw new Error(err);
-            res
-              .status(200)
-              .json({ token, name: user.name, message: "Login successful" });
+            res.status(200).json({
+              token,
+              firstName: user.firstName,
+              message: "Login successful",
+            });
           }
         );
       } else res.status(401).json({ errors: ["Incorrect email or password"] });
